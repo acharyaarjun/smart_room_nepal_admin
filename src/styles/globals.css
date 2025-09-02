@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 5px;
+}
+
+.jodit-container:not(.jodit_inline) {
+  border: none !important;
+}
+
+.jodit_theme_summer {
+  --jd-color-background-default: #417505 !important;
+  --jd-color-border: #474025 !important;
+  --jd-color-panel: #5fd3a2 !important;
+  --jd-color-icon: #8b572a !important;
+}
+
+.h-resize {
+  height: calc(100vh - 100px);
+}
+
+.rich-text img {
+  display: inline-block;
+  margin-right: 5px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+ol,
+ul {
+  padding-left: 20px;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: lower-alpha;
+}
+
+.text-gradient {
+  background: rgb(44, 38, 109);
+  background: linear-gradient(
+    14deg,
+    rgba(44, 38, 109, 1) 17%,
+    rgba(48, 133, 223, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

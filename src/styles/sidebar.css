@@ -1,0 +1,22 @@
+.sidebar {
+  transition: min-width 0.3s ease-in-out;
+
+  &.sidebar-expanded {
+    min-width: 265px;
+  }
+
+  &.sidebar-collapsed {
+    min-width: 85px;
+    max-width: 85px;
+  }
+}
+
+.sidebar-display {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar-display {
+    display: inline-block !important;
+  }
+}
