@@ -1,15 +1,14 @@
 "use client";
-import { encryptAccessToken } from "@/helpers/crypto";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { logout as signout } from "@/services/authService";
 import { login } from "@/services/guestService";
-import { setToLocalStorage } from "@/helpers/local-storage";
 import { useDispatch } from "react-redux";
 import { removeAuth, setAuth } from "@/redux/features/authSlice";
 import { setMessage } from "@/redux/features/popupMessageSlice";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Login } from "@/types/guest";
 import { User } from "@/types/user";
+import { clearSecureItems, setItemSecurely } from "@/helpers/local-storage";
 
 const useLogin = () => {
   const router = useRouter();
@@ -68,21 +67,17 @@ const useLogin = () => {
         const response = await login(formData);
 
         const accessToken: string = response.data.accessToken;
-        const encryptedAccessToken = encryptAccessToken(accessToken);
-        setToLocalStorage("accessToken", encryptedAccessToken);
+        setItemSecurely("accessToken", accessToken);
 
         const user: User = response.data.user;
         dispatch(setAuth(user));
         const userData = JSON.stringify(user);
-        setToLocalStorage("user", userData);
+        setItemSecurely("user", userData);
 
         if (redirectUrl) {
           router.push(redirectUrl);
         } else {
-          if (
-            user.role.title === "super-admin" ||
-            user.role.title === "admin"
-          ) {
+          if (user.role === "admin") {
             router.push("/dashboard");
           }
         }
@@ -101,13 +96,16 @@ const useLogin = () => {
   };
 
   const handleLogout = async () => {
-    setIsLoading(true);
-    await signout();
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("user");
-    dispatch(removeAuth());
-    router.push("/");
-    setIsLoading(false);
+    try {
+      await signout();
+      dispatch(removeAuth());
+      clearSecureItems(["accessToken", "user"]);
+      router.push("/");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return {

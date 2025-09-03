@@ -1,3 +1,4 @@
+import { getItemSecurely } from "@/helpers/local-storage";
 import { User } from "@/types/user";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -9,8 +10,8 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  isAuthenticated: false,
-  user: null,
+  isAuthenticated: !!getItemSecurely("user"),
+  user: getItemSecurely("user"),
   loading: false,
   error: "",
 };

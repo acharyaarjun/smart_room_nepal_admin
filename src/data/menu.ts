@@ -2,8 +2,6 @@ import { Menu } from "@/types/menu";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { BsImages } from "react-icons/bs";
 import { FaRegFolder } from "react-icons/fa";
-
-import { LiaCertificateSolid } from "react-icons/lia";
 import { MdAddToPhotos } from "react-icons/md";
 
 export const MenuData: Menu[] = [
@@ -15,29 +13,22 @@ export const MenuData: Menu[] = [
   },
   {
     id: 2,
-    name: "Medias",
+    name: "Dropdown",
     link: "#",
     icon: FaRegFolder,
     subMenu: [
       {
         id: 1,
-        name: "Gallery",
-        link: "/medias",
+        name: "Item 1",
+        link: "#",
         icon: BsImages,
       },
       {
         id: 2,
-        name: "Upload",
-        link: "/medias/upload",
+        name: "Item 2",
+        link: "#",
         icon: MdAddToPhotos,
       },
     ],
-  },
-
-  {
-    id: 7,
-    name: "Accreditations",
-    link: "/accreditations",
-    icon: LiaCertificateSolid,
   },
 ];

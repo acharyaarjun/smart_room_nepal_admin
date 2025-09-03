@@ -6,8 +6,8 @@ import {
   SingleLineLoading,
 } from "@/components/common";
 import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "@/helpers/local-storage";
 import { useForgotPassword } from "@/hooks";
+import { getItemSecurely } from "@/helpers/local-storage";
 
 const ForgotPassword = () => {
   const {
@@ -22,7 +22,7 @@ const ForgotPassword = () => {
 
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    const token = getFromLocalStorage("accessToken");
+    const token = getItemSecurely("accessToken");
     if (token) {
       router.push("/dashboard");
     } else {

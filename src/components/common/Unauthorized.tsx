@@ -8,8 +8,8 @@ export default function Unauthorized() {
   const { user } = useSelector((state: RootState) => state.auth);
 
   let href = "";
-  if (user && user.role.title === "super-admin") {
-    href = "/admin/dashboard";
+  if (user && user.role === "admin") {
+    href = "/dashboard";
   } else {
     href = "/";
   }

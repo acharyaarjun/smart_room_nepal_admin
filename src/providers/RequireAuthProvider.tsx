@@ -3,9 +3,10 @@ import { setAuth } from "@/redux/features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useLayoutEffect } from "react";
 import { Spinner } from "@/components/common";
-import { Role, User } from "@/types/user";
+import { User } from "@/types/user";
 import { useRouter } from "next/navigation";
 import { RootState } from "@/redux/store";
+import { getItemSecurely } from "@/helpers/local-storage";
 
 const RequireAuthProvider = ({
   children,
@@ -21,22 +22,33 @@ const RequireAuthProvider = ({
   );
 
   useLayoutEffect(() => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      router.push("/");
-    }
+    const getUser = async () => {
+      try {
+        const user: string | null = (await getItemSecurely("user")) || null;
 
-    const parsedUser: User | null = user ? JSON.parse(user) : null;
-    if (user) {
-      dispatch(setAuth(JSON.parse(user)));
+        if (!user) {
+          router.push("/");
+          return;
+        }
 
-      const userRole = parsedUser?.role as Role;
-      if (roles && roles.length > 0 && !roles.includes(userRole.title)) {
-        router.push("/unauthorized");
+        if (user) {
+          const parsedUser: User = JSON.parse(user);
+          dispatch(setAuth(parsedUser));
+          const userRole = parsedUser?.role as string;
+
+          if (roles && roles.length > 0 && !roles.includes(userRole)) {
+            router.push("/unauthorized");
+          }
+        } else {
+          router.push("/");
+        }
+      } catch (error) {
+        console.error("Error getting user:", error);
+        router.push("/");
       }
-    } else {
-      router.push("/");
-    }
+    };
+
+    getUser();
   }, [dispatch, router, roles]);
 
   if (isAuthenticated) {

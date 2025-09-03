@@ -30,9 +30,7 @@ export type User = {
   isEmailVerified: boolean;
   isEnabled: boolean;
   loginMethod: string;
-  role: {
-    title: string;
-  };
+  role: string;
   userProfile: {
     phone: string | null;
     gender: string | null;

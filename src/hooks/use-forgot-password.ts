@@ -13,6 +13,7 @@ import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { User } from "@/types/user";
 import { RootState } from "@/redux/store";
+import { getItemSecurely } from "@/helpers/local-storage";
 
 export default function useForgotPassword() {
   const router = useRouter();
@@ -423,7 +424,7 @@ export default function useForgotPassword() {
 
   const redirectIfAuthenticate = () => {
     if (typeof window !== "undefined") {
-      const accessToken = localStorage.getItem("accessToken");
+      const accessToken = getItemSecurely("accessToken");
 
       if (accessToken) {
         if (pathname === "/verify-email") {

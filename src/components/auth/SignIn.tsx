@@ -9,7 +9,7 @@ import {
 } from "@/components/common";
 import { useLogin } from "@/hooks";
 import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "@/helpers/local-storage";
+import { getItemSecurely } from "@/helpers/local-storage";
 
 const SignIn = () => {
   const {
@@ -29,7 +29,7 @@ const SignIn = () => {
 
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    const token = getFromLocalStorage("accessToken");
+    const token = getItemSecurely("accessToken");
     if (token) {
       router.push("/dashboard");
     } else {

@@ -1,9 +1,13 @@
 import AppApis from "@/constants/appApis";
-import { decryptAccessToken, encryptAccessToken } from "@/helpers/crypto";
+import {
+  clearSecureItems,
+  getItemSecurely,
+  setItemSecurely,
+} from "@/helpers/local-storage";
 import axios, { AxiosError, AxiosInstance } from "axios";
 
 export const baseUrl = `${
-  process.env.NEXT_PUBLIC_API_URL || "https://aceglobal.edu.np"
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080"
 }`;
 
 declare module "axios" {
@@ -13,17 +17,15 @@ declare module "axios" {
 }
 
 const getAccessToken = () => {
-  const accessToken = localStorage.getItem("accessToken");
-  return accessToken ? decryptAccessToken(accessToken) : null;
+  return getItemSecurely("accessToken") || null;
 };
 
 const saveAccessToken = (accessToken: string) => {
-  const encryptedAccessToken = encryptAccessToken(accessToken);
-  localStorage.setItem("accessToken", encryptedAccessToken);
+  setItemSecurely("accessToken", accessToken);
 };
 
 export const logout = async (): Promise<void> => {
-  localStorage.clear();
+  clearSecureItems(["accessToken", "user"]);
 };
 
 const myAxios: AxiosInstance = axios.create({
@@ -40,7 +42,7 @@ const refreshAccessToken = async () => {
 
   try {
     const response = await axios.post(
-      "https://aceglobal.edu.np" + AppApis.auth.refreshToken,
+      "http://localhost:8080" + AppApis.auth.refreshToken,
       {
         isAuthRoute: false,
       },
