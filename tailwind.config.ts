@@ -10,7 +10,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        skin: "#0085DF",
         primary: "#3085df",
         secondary: "#2c266d",
         danger: "#dc3545",

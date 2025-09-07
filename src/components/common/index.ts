@@ -1,5 +1,5 @@
 export { default as Spinner } from "./Spinner";
-export { default as LightBox } from "./LightBox";
+export { default as Lightbox } from "./Lightbox";
 export { default as SingleLineLoading } from "./SingleLineLoading";
 export { default as Pagination } from "./Pagination";
 export { default as Search } from "./Search";
@@ -20,3 +20,5 @@ export { default as PdfLoader } from "./PdfLoader";
 export { default as FileUpload } from "./FileUpload";
 export { default as JoditEditorWrapper } from "./JoditEditorWrapper";
 export { default as Redirect } from "./Redirect";
+export { default as IconComponent } from "./IconComponent";
+export { default as FormImageElement } from "./FormImageElement";

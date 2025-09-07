@@ -1,83 +1,76 @@
 "use client";
+import { Media } from "@/types/media";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { GoX } from "react-icons/go";
 
-const LightBox = ({
-  mimeType,
-  url,
-  closeBox,
-}: {
-  mimeType: string;
-  url: string;
-  closeBox: () => void;
-}) => {
+interface Props {
+  media: Media;
+  closeLightbox: () => void;
+}
+
+const Lightbox = ({ media, closeLightbox }: Props) => {
   const [open, setOpen] = useState<boolean>(true);
-  // if lightbox is open, set body height to screen height
+
+  // Disable background scroll when open
   useEffect(() => {
     if (open) {
-      document.body.style.height = "100vh";
-      document.body.style.overflowY = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.height = "auto";
-      document.body.style.overflowY = "auto";
+      document.body.style.overflow = "auto";
     }
 
-    // Clean up function to reset the styles when the component is unmounted
     return () => {
-      document.body.style.height = "auto";
-      document.body.style.overflowY = "auto";
+      document.body.style.overflow = "auto";
     };
   }, [open]);
 
+  const handleClose = () => {
+    setOpen(false);
+    setTimeout(closeLightbox, 300); // wait for animation
+  };
+
   return (
     <div
-      className={`fixed inset-0 z-[999] flex items-center justify-center bg-black bg-opacity-75 transition-opacity duration-300 ${
-        open ? "opacity-100" : "opacity-0"
-      }`}
+      className={`fixed inset-0 z-[999] flex items-center justify-center transition-opacity duration-300 bg-black/20 dark:bg-white/20 `}
+      onClick={handleClose}
     >
       <div
-        className={`max-w-screen relative h-full max-h-screen w-full transform transition-transform duration-300 ${
-          open ? "scale-100" : "scale-95"
+        className={`relative mx-4 flex max-h-[90vh] max-w-[90vw] w-full items-center justify-center transform transition-all duration-300 ${
+          open ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          title="Close Button"
-          type="button"
-          className="absolute right-4 top-4 z-[999] rounded-full bg-white p-2 transition-colors hover:bg-gray-200"
-          onClick={() => {
-            setOpen(false);
-            setTimeout(closeBox, 300); // Allow the animation to complete before closing
-          }}
-        >
-          <GoX className="text-2xl text-black" />
-        </button>
-
-        {/* Image */}
-        <div className="flex h-full w-full items-center justify-center">
-          {mimeType.includes("image") ? (
+        {/* Media */}
+        <div className="relative flex items-center justify-center rounded-lg h-full max-h-[90vh] w-auto object-contain">
+          {/* Close Button */}
+          <button
+            title="Close"
+            type="button"
+            className="absolute -right-3 -top-3 z-[1000] rounded-full bg-primary p-2 shadow-lg transition hover:rotate-90"
+            onClick={handleClose}
+          >
+            <GoX className="text-2xl text-white" />
+          </button>
+          {media.mimeType.includes("image") ? (
             <Image
-              src={url}
-              alt={mimeType}
-              className="rounded-lg"
-              fill
-              sizes="100vw"
-              style={{
-                objectFit: "contain",
-              }}
+              src={media.url}
+              alt={media.mimeType}
+              className="rounded-lg h-full max-h-[90vh] w-auto object-contain"
+              width={1200}
+              height={800}
             />
           ) : (
             <video
-              src={url}
+              src={media.url}
               controls
               crossOrigin="anonymous"
-              className="h-full w-full rounded-lg object-contain"
-            ></video>
+              className="max-h-[90vh] w-full rounded-lg"
+            />
           )}
         </div>
       </div>
     </div>
   );
 };
-export default LightBox;
+export default Lightbox;

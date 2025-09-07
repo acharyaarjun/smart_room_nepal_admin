@@ -34,7 +34,7 @@ export default function DeleteModal({
     <>
       {isOpen && (
         <div className="fixed inset-0 z-[9999] mx-auto flex h-screen w-full items-center justify-center p-[10px]">
-          <div className="pointer-events-none fixed inset-0 top-0 bg-gray-800 bg-opacity-50 transition-opacity"></div>
+          <div className="pointer-events-none fixed inset-0 top-0 bg-gray-800 opacity-50 transition-opacity"></div>
           <div className="z-[999] max-w-[350px] rounded-md bg-white dark:bg-darkbg dark:border-[1px] dark:border-gray-600">
             <div className="flex w-full flex-col items-center justify-center p-6 text-center">
               <div className="icon mb-3 flex w-full items-center justify-center">

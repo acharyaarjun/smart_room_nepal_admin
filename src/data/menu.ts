@@ -1,5 +1,6 @@
 import { Menu } from "@/types/menu";
 import { AiOutlineDashboard } from "react-icons/ai";
+import { BiGlobe } from "react-icons/bi";
 import { BsImages } from "react-icons/bs";
 import { FaRegFolder } from "react-icons/fa";
 import { MdAddToPhotos } from "react-icons/md";
@@ -13,6 +14,12 @@ export const MenuData: Menu[] = [
   },
   {
     id: 2,
+    name: "Districts",
+    link: "/districts",
+    icon: BiGlobe,
+  },
+  {
+    id: 3,
     name: "Dropdown",
     link: "#",
     icon: FaRegFolder,
