@@ -1,5 +1,5 @@
 export { default as Spinner } from "./Spinner";
-export { default as Lightbox } from "./Lightbox";
+export { default as Lightbox } from "./LightboxComponent";
 export { default as SingleLineLoading } from "./SingleLineLoading";
 export { default as Pagination } from "./Pagination";
 export { default as Search } from "./Search";

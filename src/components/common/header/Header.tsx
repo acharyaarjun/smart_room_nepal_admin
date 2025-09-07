@@ -102,7 +102,7 @@ export default function Header(
       <header
         className={`w-full h-20 flex items-center sticky dark:border-b-[1px] border-transparent top-0 z-[998] transition-shadow ${
           isScrolled
-            ? "shadow-sm dark:border-b-[1px] dark:border-gray-700 bg-white dark:bg-darkbg"
+            ? "shadow-sm dark:border-b-[1px] dark:border-gray-700 bg-white dark:bg-dark"
             : ""
         }`}
       >
@@ -140,7 +140,7 @@ export default function Header(
             <ThemeToggler />
             <div
               ref={profileRef}
-              className="dark:bg-darkbg border-primary/30 flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md border-[1px] bg-white"
+              className="dark:bg-dark border-primary/30 flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md border-[1px] bg-white"
               onClick={toggleProfileMenu}
             >
               <Image
@@ -162,7 +162,7 @@ export default function Header(
       </header>
       {openSidebar && (
         <>
-          <div className="flex fixed top-0 left-0 md:hidden dark:bg-darkbg bg-white z-[999] h-full">
+          <div className="flex fixed top-0 left-0 md:hidden dark:bg-dark bg-white z-[999] h-full">
             <Sidebar
               openFullSidebar={openFullSidebar}
               handleOpenfullSidebar={handleOpenfullSidebar}

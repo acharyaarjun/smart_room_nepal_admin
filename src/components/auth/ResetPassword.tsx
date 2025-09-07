@@ -52,7 +52,7 @@ const ResetPassword = () => {
       {loading ? (
         <SingleLineLoading />
       ) : (
-        <div className="w-full sm:w-fit sm:min-w-[500px] max-w-3xl px-5 bg-white dark:bg-darkbg dark:border-gray-700 dark:border shadow-card rounded-lg">
+        <div className="w-full sm:w-fit sm:min-w-[500px] max-w-3xl px-5 bg-white dark:bg-dark dark:border-gray-700 dark:border shadow-card rounded-lg">
           <div className="my-7 text-center">
             <h3 className="text-[24px] font-semibold text-gray-800 dark:text-gray-200">
               Reset Password

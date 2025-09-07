@@ -35,7 +35,7 @@ export default function Sidebar({
   }, [isMobile, openFullSidebar, handleOpenfullSidebar]);
   return (
     <div
-      className={`sidebar sticky top-0 z-[999] dark:bg-darkbg min-h-screen h-full border-r-[1px] border-r-slate-300 dark:border-r-slate-700 ${
+      className={`sidebar sticky top-0 z-[999] dark:bg-dark min-h-screen h-full border-r-[1px] border-r-slate-300 dark:border-r-slate-700 ${
         openFullSidebar ? "sidebar-expanded" : "sidebar-collapsed"
       } `}
     >

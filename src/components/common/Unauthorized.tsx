@@ -15,7 +15,7 @@ export default function Unauthorized() {
   }
 
   return (
-    <div className="flex min-h-screen min-w-screen flex-col items-center justify-center p-4 dark:bg-darkbg">
+    <div className="flex min-h-screen min-w-screen flex-col items-center justify-center p-4 dark:bg-dark">
       <div className="w-full max-w-[500px] rounded-lg  p-8 text-center shadow-lg bg-white dark:bg-slate-900">
         <h1 className="mb-4 text-4xl font-bold text-primary">
           401 - Unauthorized

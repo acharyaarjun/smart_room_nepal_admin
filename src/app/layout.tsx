@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Livvic } from "next/font/google";
 import "@/styles/globals.css";
 import { CustomThemeProvider, StoreProvider } from "@/providers";
 import NextTopLoader from "nextjs-toploader";
 import { ToastUtils } from "@/utils";
 
-const outfit = Outfit({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const livvic = Livvic({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-livvic",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,7 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body
-          className={`${outfit.className} antialiased bg-[#fcfcfc] dark:bg-darkbg`}
+          className={`${livvic.className} antialiased bg-white dark:bg-dark`}
         >
           <div className="z-[999]">
             <NextTopLoader showSpinner={false} color="#3085DF" />
