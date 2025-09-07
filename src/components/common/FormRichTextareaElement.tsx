@@ -379,7 +379,7 @@ export default function RichText({
           />
         </div>
         {editorError && (
-          <span className="mt-1 w-full text-[12px] font-normal italic text-danger">
+          <span className="mt-1 w-full text-[12px]  italic text-danger">
             {editorError}
           </span>
         )}

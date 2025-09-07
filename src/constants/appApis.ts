@@ -38,6 +38,16 @@ const AppApis = {
     update: (id: string | number) => `/api/${API_VERSION}/amenities/${id}`,
     delete: (id: string | number) => `/api/${API_VERSION}/amenities/${id}`,
   },
+  membershipType: {
+    all: `/api/${API_VERSION}/membership-types`,
+    getSingle: (id: string | number) =>
+      `/api/${API_VERSION}/membership-types/${id}`,
+    create: `/api/${API_VERSION}/membership-types`,
+    update: (id: string | number) =>
+      `/api/${API_VERSION}/membership-types/${id}`,
+    delete: (id: string | number) =>
+      `/api/${API_VERSION}/membership-types/${id}`,
+  },
 };
 
 export default AppApis;

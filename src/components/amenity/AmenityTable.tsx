@@ -103,7 +103,7 @@ const AmenityTableComponent = () => {
         <Search name={"amenities"} />
         <div>
           <button
-            className="cursor-pointer py-2 px-3 bg-primary text-[14px] font-normal text-white rounded-md"
+            className="cursor-pointer py-2 px-3 bg-primary text-[14px]  text-white rounded-md"
             onClick={openModal}
           >
             Add Amenity
@@ -112,7 +112,7 @@ const AmenityTableComponent = () => {
       </div>
       <div className="relative overflow-x-auto my-5">
         <table className="w-full text-sm text-left rtl:text-right ">
-          <thead className="text-xs uppercase border-b border-dashed border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-normal">
+          <thead className="text-xs uppercase border-b border-dashed border-gray-300 dark:border-gray-700 font-medium text-gray-700 dark:text-gray-300 ">
             <tr>
               <th scope="col" className="pr-6 py-3 whitespace-nowrap">
                 S.N.
@@ -132,7 +132,7 @@ const AmenityTableComponent = () => {
                 <td
                   scope="row"
                   colSpan={4}
-                  className="py-4 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300"
+                  className="py-4  whitespace-nowrap text-gray-700 dark:text-gray-300"
                 >
                   <div className="min-h-[100px] flex justify-center items-center bg-gray-100 dark:bg-gray-700 rounded-lg italic">
                     <div className="text-center text-orange-500 font-medium">
@@ -146,7 +146,7 @@ const AmenityTableComponent = () => {
                 <td
                   scope="row"
                   colSpan={4}
-                  className="py-4 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300"
+                  className="py-4  whitespace-nowrap text-gray-700 dark:text-gray-300"
                 >
                   <div className="min-h-[100px] flex justify-center items-center bg-danger/30 rounded-lg italic">
                     <p className="text-center text-danger font-medium">
@@ -171,7 +171,7 @@ const AmenityTableComponent = () => {
                 <td
                   scope="row"
                   colSpan={4}
-                  className="py-4 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300"
+                  className="py-4  whitespace-nowrap text-gray-700 dark:text-gray-300"
                 >
                   <div className="min-h-[100px] flex justify-center items-center bg-gray-100 dark:bg-gray-700 rounded-lg italic">
                     <div className="text-center text-orange-500 font-medium">

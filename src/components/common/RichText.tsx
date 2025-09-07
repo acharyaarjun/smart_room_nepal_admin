@@ -89,7 +89,7 @@ const RichText = ({
           onChange={handleChangeContent}
         />
         {error && (
-          <span className="text-danger text-[12px] font-normal tracking-[0] mt-1 italic leading-[1] w-full">
+          <span className="text-danger text-[12px]  tracking-[0] mt-1 italic leading-[1] w-full">
             {error}
           </span>
         )}
