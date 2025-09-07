@@ -22,7 +22,7 @@ const Switch = ({
       >
         {/* Switch  */}
         <div
-          className={`h-5 w-5 rounded-full bg-white dark:bg-darkbg shadow-md ${
+          className={`h-5 w-5 rounded-full bg-white dark:bg-dark shadow-md ${
             status && "translate-x-[26px] transform"
           }`}
         ></div>

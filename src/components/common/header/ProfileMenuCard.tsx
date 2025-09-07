@@ -24,9 +24,9 @@ export default function ProfileMenuCard() {
   };
 
   return (
-    <div className="absolute top-16 right-6 border border-gray-300 bg-white dark:bg-darkbg dark:border-gray-700 rounded-md shadow-md min-w-72">
+    <div className="absolute top-16 right-6 border border-gray-300 bg-white dark:bg-dark dark:border-gray-700 rounded-md shadow-md min-w-72">
       <div className="flex flex-col text-center gap-2 items-center border-b border-b-gray-300 dark:border-graycolor p-4">
-        <div className="border-[1px] h-[80px] w-[80px] bg-white dark:bg-darkbg border-primary/40 rounded-full flex justify-center items-center cursor-pointer overflow-hidden">
+        <div className="border-[1px] h-[80px] w-[80px] bg-white dark:bg-dark border-primary/40 rounded-full flex justify-center items-center cursor-pointer overflow-hidden">
           {user && user.userProfile.avatar && !imageError ? (
             <Image
               height={250}

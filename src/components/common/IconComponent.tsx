@@ -25,6 +25,6 @@ export default function IconComponent({
   const Icon =
     icon in IconData
       ? IconData[icon as keyof typeof IconData]
-      : IconData[IconEnum.HIKING];
+      : IconData[IconEnum.DEFAULT];
   return <Icon className={`${size} ${className}`} />;
 }

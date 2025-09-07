@@ -31,6 +31,13 @@ const AppApis = {
     update: (id: string | number) => `/api/${API_VERSION}/districts/${id}`,
     delete: (id: string | number) => `/api/${API_VERSION}/districts/${id}`,
   },
+  amenity: {
+    all: `/api/${API_VERSION}/amenities`,
+    getSingle: (id: string | number) => `/api/${API_VERSION}/amenities/${id}`,
+    create: `/api/${API_VERSION}/amenities`,
+    update: (id: string | number) => `/api/${API_VERSION}/amenities/${id}`,
+    delete: (id: string | number) => `/api/${API_VERSION}/amenities/${id}`,
+  },
 };
 
 export default AppApis;

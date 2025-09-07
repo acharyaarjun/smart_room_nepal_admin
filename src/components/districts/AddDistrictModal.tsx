@@ -43,7 +43,7 @@ export default function AddDistrictModal({
 
   return (
     <div className="relative z-[50]   p-2 w-full max-w-5xl">
-      <div className="bg-white dark:bg-darkbg rounded-lg shadow-3xl">
+      <div className="bg-white dark:bg-dark rounded-lg shadow-3xl">
         <div className="flex items-center justify-between p-4 md:px-5 md:py-4 border-b rounded-t dark:border-gray-600">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             {district ? "Update" : "Add"} District
