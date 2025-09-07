@@ -24,6 +24,13 @@ const AppApis = {
     upload: `/api/${API_VERSION}/medias`,
     delete: (id: string | number) => `/api/${API_VERSION}/medias/${id}`,
   },
+  districts: {
+    all: `/api/${API_VERSION}/districts`,
+    getSingle: (slug: string) => `/api/${API_VERSION}/districts/${slug}`,
+    create: `/api/${API_VERSION}/districts`,
+    update: (id: string | number) => `/api/${API_VERSION}/districts/${id}`,
+    delete: (id: string | number) => `/api/${API_VERSION}/districts/${id}`,
+  },
 };
 
 export default AppApis;

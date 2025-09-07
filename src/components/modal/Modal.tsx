@@ -19,7 +19,7 @@ export default function Modal({
     <>
       {isOpen && (
         <div className="fixed inset-0 z-[999] overflow-y-scroll flex items-start py-0 sm:py-10 justify-center w-full mx-auto">
-          <div className="fixed top-0 inset-0 bg-gray-800 dark:bg-gray-500 dark:bg-opacity-50 bg-opacity-50 transition-opacity pointer-events-none"></div>
+          <div className="fixed top-0 inset-0 bg-gray-800 dark:bg-gray-500 dark:opacity-50 opacity-50 transition-opacity pointer-events-none"></div>
           {children}
         </div>
       )}
