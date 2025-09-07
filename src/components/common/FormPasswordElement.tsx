@@ -85,7 +85,7 @@ export default function FormPasswordElement({
         </div>
       </div>
       {error && (
-        <span className="mt-1 w-full text-[12px] font-normal italic text-danger">
+        <span className="mt-1 w-full text-[12px]  italic text-danger">
           {error}
         </span>
       )}

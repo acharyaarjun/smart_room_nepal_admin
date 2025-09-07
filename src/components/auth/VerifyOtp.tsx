@@ -117,7 +117,7 @@ const VerifyOtp = () => {
                   ))}
                 </div>
                 {otpError && (
-                  <span className="mt-1 w-full text-[12px] font-normal italic leading-[1] tracking-[0] text-danger">
+                  <span className="mt-1 w-full text-[12px]  italic leading-[1] tracking-[0] text-danger">
                     {otpError}
                   </span>
                 )}
@@ -127,7 +127,7 @@ const VerifyOtp = () => {
                 {isLoading ? (
                   <ButtonLoader />
                 ) : (
-                  <button className="bg-primary w-full py-2.5 rounded-lg text-white font-normal">
+                  <button className="bg-primary w-full py-2.5 rounded-lg text-white ">
                     Send OTP
                   </button>
                 )}

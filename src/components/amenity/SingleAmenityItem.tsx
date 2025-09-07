@@ -41,17 +41,17 @@ const SingleAmenityItem = ({
     <>
       <tr
         key={item.id}
-        className="border-b border-dashed border-gray-300 dark:border-gray-700 "
+        className="border-b border-dashed border-gray-300 dark:border-gray-700 font-medium "
       >
         <td
           scope="row"
-          className="pr-6 py-4 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300 "
+          className="pr-6 py-4  whitespace-nowrap text-gray-700 dark:text-gray-300 "
         >
           {index + 1}
         </td>
         <td
           scope="row"
-          className="py-4 pr-6 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300 w-[100px]"
+          className="py-4 pr-6  whitespace-nowrap text-gray-700 dark:text-gray-300 w-[100px]"
         >
           <div className="flex items-center justify-center h-[75px] w-[75px] border-[1px] border-gray-200 dark:border-gray-600 rounded-sm">
             <IconComponent icon={item.icon} />
@@ -59,11 +59,11 @@ const SingleAmenityItem = ({
         </td>
         <td
           scope="row"
-          className="pr-6 py-4 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300"
+          className="pr-6 py-4  whitespace-nowrap text-gray-700 dark:text-gray-300"
         >
           {item.name}
         </td>
-        <td className="pr-6 py-4 font-normal whitespace-nowrap text-gray-700 dark:text-gray-300 ">
+        <td className="pr-6 py-4  whitespace-nowrap text-gray-700 dark:text-gray-300 ">
           <div className="flex gap-2 items-center">
             <button
               title="Edit"

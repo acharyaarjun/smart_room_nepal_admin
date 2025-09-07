@@ -96,7 +96,7 @@ export default function AddAmenityModal({
                     </div>
                   </div>
                   {iconError && (
-                    <span className="mt-1 w-full text-[12px] font-normal italic text-danger">
+                    <span className="mt-1 w-full text-[12px]  italic text-danger">
                       {iconError}
                     </span>
                   )}
@@ -114,13 +114,13 @@ export default function AddAmenityModal({
               </div>
               <div className="flex justify-end">
                 {isLoading ? (
-                  <div className="py-1.5 px-3 bg-primary text-[14px] font-normal text-white rounded-md my-4">
+                  <div className="py-1.5 px-3 bg-primary text-[14px]  text-white rounded-md my-4">
                     <SingleLineLoading color="text-white" />
                   </div>
                 ) : (
                   <button
                     type="submit"
-                    className="py-1.5 px-3 bg-primary text-[14px] font-normal text-white rounded-md my-4 cursor-pointer"
+                    className="py-1.5 px-3 bg-primary text-[14px]  text-white rounded-md my-4 cursor-pointer"
                   >
                     {amenity ? "Update" : "Add"} Amenity
                   </button>

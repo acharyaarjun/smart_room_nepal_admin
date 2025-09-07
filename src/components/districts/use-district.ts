@@ -8,11 +8,11 @@ import { District, DistrictForm } from "@/types/district";
 const useDistrict = ({
   closeModal,
   district,
-  refresh,
+  updateItemInList,
 }: {
   closeModal: () => void;
   district?: District;
-  refresh?: () => void;
+  updateItemInList: (updatedItem: District, id: number) => void;
 }) => {
   const [formData, setFormData] = useState<DistrictForm>({
     name: district ? district.name : "",
@@ -113,18 +113,18 @@ const useDistrict = ({
       try {
         setIsLoading(true);
         if (district) {
-          await updateDistrict(formData, district.id);
+          const response = await updateDistrict(formData, district.id);
           toast.success("District updated successfully", {
             id: "toast",
           });
-          if (refresh) refresh();
+          updateItemInList({ id: district.id, ...response.data }, district.id);
           closeModal();
         } else {
-          await addDistrict(formData);
+          const response = await addDistrict(formData);
           toast.success("Category added successfully", {
             id: "toast",
           });
-          if (refresh) refresh();
+          updateItemInList(response.data, response.data.id);
           closeModal();
         }
       } catch (error: any) {

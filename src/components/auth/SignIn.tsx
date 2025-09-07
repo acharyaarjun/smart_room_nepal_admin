@@ -94,7 +94,7 @@ const SignIn = () => {
                 {isLoading ? (
                   <ButtonLoader />
                 ) : (
-                  <button className="bg-primary w-full py-2.5 rounded-lg text-white font-normal">
+                  <button className="bg-primary w-full py-2.5 rounded-lg text-white ">
                     Sign In
                   </button>
                 )}

@@ -13,12 +13,13 @@ type Props = {
   closeModal: () => void;
   district?: District;
   refresh?: () => void;
+  updateItemInList: (updatedItem: District, id: number) => void;
 };
 
 export default function AddDistrictModal({
   closeModal,
   district,
-  refresh,
+  updateItemInList,
 }: Props) {
   const {
     name,
@@ -38,7 +39,7 @@ export default function AddDistrictModal({
   } = useDistrict({
     closeModal: closeModal,
     district,
-    refresh: refresh,
+    updateItemInList,
   });
 
   return (
@@ -92,13 +93,13 @@ export default function AddDistrictModal({
             </div>
             <div className="flex justify-end">
               {isLoading ? (
-                <div className="py-1.5 px-3 bg-primary text-[14px] font-normal text-white rounded-md my-4">
+                <div className="py-1.5 px-3 bg-primary text-[14px]  text-white rounded-md my-4">
                   <SingleLineLoading color="text-white" />
                 </div>
               ) : (
                 <button
                   type="submit"
-                  className="py-1.5 px-3 bg-primary text-[14px] font-normal text-white rounded-md my-4 cursor-pointer"
+                  className="py-1.5 px-3 bg-primary text-[14px]  text-white rounded-md my-4 cursor-pointer"
                 >
                   {district ? "Update" : "Add"} District
                 </button>

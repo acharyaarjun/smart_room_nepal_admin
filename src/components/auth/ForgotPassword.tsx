@@ -68,7 +68,7 @@ const ForgotPassword = () => {
                 {isLoading ? (
                   <ButtonLoader />
                 ) : (
-                  <button className="bg-primary w-full py-2.5 rounded-lg text-white font-normal">
+                  <button className="bg-primary w-full py-2.5 rounded-lg text-white ">
                     Send OTP
                   </button>
                 )}

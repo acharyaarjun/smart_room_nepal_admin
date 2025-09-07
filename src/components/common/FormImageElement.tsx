@@ -49,7 +49,7 @@ export default function FormImageElement({
         </div>
       </div>
       {mediaError && (
-        <span className="w-full text-center text-[12px] font-normal italic leading-[1] tracking-[0] text-danger">
+        <span className="w-full text-center text-[12px]  italic leading-[1] tracking-[0] text-danger">
           {mediaError}
         </span>
       )}
