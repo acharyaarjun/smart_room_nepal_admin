@@ -198,6 +198,7 @@ const DistrictTableComponent = () => {
         <AddDistrictModal
           closeModal={closeModal}
           updateItemInList={updateItemInList}
+          refresh={refreshPage}
         />
       </Modal>
 

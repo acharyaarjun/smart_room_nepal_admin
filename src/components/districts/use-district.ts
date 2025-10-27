@@ -9,10 +9,12 @@ const useDistrict = ({
   closeModal,
   district,
   updateItemInList,
+  refresh,
 }: {
   closeModal: () => void;
   district?: District;
   updateItemInList: (updatedItem: District, id: number) => void;
+  refresh?: () => void;
 }) => {
   const [formData, setFormData] = useState<DistrictForm>({
     name: district ? district.name : "",
@@ -121,10 +123,13 @@ const useDistrict = ({
           closeModal();
         } else {
           const response = await addDistrict(formData);
-          toast.success("Category added successfully", {
+          toast.success("District added successfully", {
             id: "toast",
           });
           updateItemInList(response.data, response.data.id);
+          if (refresh) {
+            refresh();
+          }
           closeModal();
         }
       } catch (error: any) {

@@ -48,6 +48,11 @@ const AppApis = {
     delete: (id: string | number) =>
       `/api/${API_VERSION}/membership-types/${id}`,
   },
+  users: {
+    all: `/api/${API_VERSION}/users`,
+    getSingle: (id: string | number) => `/api/${API_VERSION}/users/${id}`,
+    update: (id: string | number) => `/api/${API_VERSION}/users/${id}`,
+  },
 };
 
 export default AppApis;

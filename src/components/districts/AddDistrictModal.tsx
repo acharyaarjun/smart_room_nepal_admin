@@ -20,6 +20,7 @@ export default function AddDistrictModal({
   closeModal,
   district,
   updateItemInList,
+  refresh,
 }: Props) {
   const {
     name,
@@ -40,6 +41,7 @@ export default function AddDistrictModal({
     closeModal: closeModal,
     district,
     updateItemInList,
+    refresh: refresh,
   });
 
   return (
