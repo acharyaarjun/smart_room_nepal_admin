@@ -140,24 +140,23 @@ const SingleMembershipItem = ({
               <FaEdit />
             </button>
           </div>
+          <Modal isOpen={showViewModal}>
+            <ViewMembershipModal
+              closeModal={closeViewModal}
+              membership={singleItem}
+            />
+          </Modal>
+
+          <Modal isOpen={showEditModal}>
+            <UpdateMembershipModal
+              closeModal={closeEditModal}
+              membership={singleItem}
+              refresh={refresh}
+              updateItemInList={updateItemInList}
+            />
+          </Modal>
         </td>
       </tr>
-
-      <Modal isOpen={showViewModal}>
-        <ViewMembershipModal
-          closeModal={closeViewModal}
-          membership={singleItem}
-        />
-      </Modal>
-
-      <Modal isOpen={showEditModal}>
-        <UpdateMembershipModal
-          closeModal={closeEditModal}
-          membership={singleItem}
-          refresh={refresh}
-          updateItemInList={updateItemInList}
-        />
-      </Modal>
     </>
   );
 };

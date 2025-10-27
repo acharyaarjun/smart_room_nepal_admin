@@ -32,7 +32,7 @@ const Lightbox = ({ media, closeLightbox }: Props) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[999] flex items-center justify-center transition-opacity duration-300 bg-black/20 dark:bg-white/20 `}
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-300 bg-black/20 dark:bg-white/20 `}
       onClick={handleClose}
     >
       <div

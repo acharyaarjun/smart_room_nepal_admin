@@ -60,6 +60,13 @@ const AppApis = {
     update: (id: string | number) =>
       `/api/${API_VERSION}/membership/admin/payments/${id}`,
   },
+  rooms: {
+    all: `/api/${API_VERSION}/rooms/admin`,
+    getSingle: (slug: string) => `/api/${API_VERSION}/rooms/${slug}`,
+    update: (slug: string) => `/api/${API_VERSION}/rooms/${slug}`,
+    amenities: (slug: string) => `/api/${API_VERSION}/rooms/amenities/${slug}`,
+    medias: (slug: string) => `/api/${API_VERSION}/rooms/medias/${slug}`,
+  },
 };
 
 export default AppApis;
