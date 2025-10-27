@@ -53,6 +53,13 @@ const AppApis = {
     getSingle: (id: string | number) => `/api/${API_VERSION}/users/${id}`,
     update: (id: string | number) => `/api/${API_VERSION}/users/${id}`,
   },
+  membership: {
+    all: `/api/${API_VERSION}/membership/admin/payments`,
+    getSingle: (id: string | number) =>
+      `/api/${API_VERSION}/membership/admin/payments/${id}`,
+    update: (id: string | number) =>
+      `/api/${API_VERSION}/membership/admin/payments/${id}`,
+  },
 };
 
 export default AppApis;

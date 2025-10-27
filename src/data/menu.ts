@@ -2,7 +2,7 @@ import { Menu } from "@/types/menu";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { BiGlobe } from "react-icons/bi";
 import { FaIcons, FaUsers } from "react-icons/fa";
-import { MdCardMembership } from "react-icons/md";
+import { MdCardMembership, MdPayment } from "react-icons/md";
 
 export const MenuData: Menu[] = [
   {
@@ -34,6 +34,12 @@ export const MenuData: Menu[] = [
     name: "Users",
     link: "/users",
     icon: FaUsers,
+  },
+  {
+    id: 6,
+    name: "Membership Payments",
+    link: "/memberships",
+    icon: MdPayment,
   },
   // {
   //   id: 4,
