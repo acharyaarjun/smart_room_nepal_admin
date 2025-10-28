@@ -67,6 +67,9 @@ const AppApis = {
     amenities: (slug: string) => `/api/${API_VERSION}/rooms/amenities/${slug}`,
     medias: (slug: string) => `/api/${API_VERSION}/rooms/medias/${slug}`,
   },
+  reviews: {
+    all: `/api/${API_VERSION}/rooms/reviews/admin`,
+  },
 };
 
 export default AppApis;
