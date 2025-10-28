@@ -8,6 +8,7 @@ import {
   MdMeetingRoom,
   MdRateReview,
 } from "react-icons/md";
+import { BsCalendarCheck } from "react-icons/bs";
 
 export const MenuData: Menu[] = [
   {
@@ -57,6 +58,12 @@ export const MenuData: Menu[] = [
     name: "Reviews",
     link: "/reviews",
     icon: MdRateReview,
+  },
+  {
+    id: 9,
+    name: "Room Requests",
+    link: "/room-requests",
+    icon: BsCalendarCheck,
   },
   // {
   //   id: 4,

@@ -8,6 +8,7 @@
 const API_VERSION = "v1";
 
 const AppApis = {
+  dashboard: `/api/${API_VERSION}/dashboard/admin`,
   auth: {
     login: `/api/${API_VERSION}/auth/login`,
     refreshToken: `/api/${API_VERSION}/auth/refresh-access-token`,
@@ -69,6 +70,9 @@ const AppApis = {
   },
   reviews: {
     all: `/api/${API_VERSION}/rooms/reviews/admin`,
+  },
+  roomRequests: {
+    all: `/api/${API_VERSION}/rooms/requests/admin`,
   },
 };
 

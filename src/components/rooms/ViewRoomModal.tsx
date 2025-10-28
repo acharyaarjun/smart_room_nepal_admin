@@ -226,7 +226,7 @@ const ViewRoomModal = ({ item, isOpen, onClose }: ViewRoomModalProps) => {
                     Full Description
                   </p>
                   <div
-                    className="text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none"
+                    className="text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none break-words text-wrap"
                     dangerouslySetInnerHTML={{ __html: item.description }}
                   />
                 </div>
